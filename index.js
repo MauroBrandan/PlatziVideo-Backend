@@ -1,6 +1,7 @@
 const express = require('express')
 const { config } = require('./config/index')
 const moviesApi = require('./routes/movies')
+const userMoviesApi = require('./routes/userMovies')
 const {
 	logErrors,
 	errorHandler,
@@ -13,6 +14,7 @@ app.use(express.json()) // Body parser
 
 // Routes
 moviesApi(app)
+userMoviesApi(app)
 
 // Catch 404
 app.use(notFoundHandler)
