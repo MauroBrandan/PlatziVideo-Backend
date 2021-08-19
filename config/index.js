@@ -13,6 +13,10 @@ const config = {
 	defaultUserPassword: process.env.DEFAULT_USER_PASSWORD,
 	publicApiKeyToken: process.env.PUBLIC_API_KEY_TOKEN,
 	adminApiKeyToken: process.env.ADMIN_API_KEY_TOKEN,
+	// Server Config
+	serverPort: process.env.SERVER_PORT || 8080,
+	apiUrl: process.env.API_URL,
+	apiKeyToken: process.env.API_KEY_TOKEN,
 }
 
 module.exports = { config }
