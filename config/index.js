@@ -17,6 +17,9 @@ const config = {
 	serverPort: process.env.SERVER_PORT || 8080,
 	apiUrl: process.env.API_URL,
 	apiKeyToken: process.env.API_KEY_TOKEN,
+	// OAuth
+	googleClientId: process.env.GOOGLE_CLIENT_ID,
+	googleClientSecret: process.env.GOOGLE_CLIENT_SECRET,
 }
 
 module.exports = { config }
