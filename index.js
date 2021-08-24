@@ -1,6 +1,9 @@
 const express = require('express')
+const helmet = require('helmet')
 const { config } = require('./config/index')
+const authApi = require('./routes/auth')
 const moviesApi = require('./routes/movies')
+const userMoviesApi = require('./routes/userMovies')
 const {
 	logErrors,
 	errorHandler,
@@ -10,9 +13,12 @@ const notFoundHandler = require('./utils/middleware/notFoundHandler')
 
 const app = express()
 app.use(express.json()) // Body parser
+app.use(helmet())
 
 // Routes
+authApi(app)
 moviesApi(app)
+userMoviesApi(app)
 
 // Catch 404
 app.use(notFoundHandler)
